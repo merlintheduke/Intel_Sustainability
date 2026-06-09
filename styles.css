@@ -278,7 +278,7 @@ img {
   }
 
   .timeline-nav {
-    justify-self: stretch;
+    display: none;
   }
 
   .timeline-scroll {
