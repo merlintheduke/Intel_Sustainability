@@ -1,0 +1,253 @@
+:root {
+  --intel-blue: #0071c5;
+  --intel-dark: #004b8d;
+  --intel-light: #f3f8ff;
+  --text-dark: #0f1f3a;
+  --text-soft: #475569;
+  --surface: #ffffff;
+  --border: rgba(0, 113, 197, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-dark);
+  background: radial-gradient(circle at top left, rgba(0, 113, 197, 0.12), transparent 35%),
+    linear-gradient(180deg, #eaf4ff 0%, #f7fbff 100%);
+}
+
+body {
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.hero-copy {
+  padding: 2.5rem;
+  background: rgba(0, 113, 197, 0.1);
+  border: 1px solid rgba(0, 113, 197, 0.18);
+  border-radius: 1.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--intel-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hero-copy h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 0.95;
+  color: var(--intel-dark);
+}
+
+.hero-copy p {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.08rem;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-slot {
+  width: 100%;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(0, 113, 197, 0.1) 0%, rgba(17, 73, 155, 0.04) 100%);
+  box-shadow: 0 24px 80px rgba(0, 71, 149, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-slot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(0, 113, 197, 0.18), transparent 20%),
+    radial-gradient(circle at 70% 80%, rgba(0, 75, 141, 0.16), transparent 18%);
+}
+
+.image-slot span {
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  color: var(--intel-dark);
+  font-weight: 600;
+}
+
+.timeline-section {
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(15, 31, 58, 0.08);
+  box-shadow: 0 18px 50px rgba(15, 31, 58, 0.06);
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 1.8rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  color: var(--intel-dark);
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.timeline-nav {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--intel-blue);
+  color: white;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.timeline-nav:hover {
+  transform: translateY(-1px);
+  background: var(--intel-dark);
+}
+
+.timeline-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 113, 197, 0.08);
+  border-radius: 999px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 113, 197, 0.35);
+  border-radius: 999px;
+}
+
+.timeline-card {
+  scroll-snap-align: start;
+  padding: 1.8rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0, 113, 197, 0.12);
+  background: rgba(243, 248, 255, 0.9);
+  box-shadow: 0 14px 40px rgba(0, 71, 149, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.timeline-year {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.5rem 0.9rem;
+  background: rgba(0, 113, 197, 0.14);
+  color: var(--intel-dark);
+  font-weight: 700;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.timeline-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.timeline-card p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-container {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-nav {
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 1.5rem 0 3rem;
+  }
+
+  .hero-copy {
+    padding: 1.75rem;
+  }
+
+  .timeline-scroll {
+    gap: 0.85rem;
+  }
+
+  .timeline-card {
+    min-width: 260px;
+  }
+}
