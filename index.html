@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intel Sustainability</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Sustainability at Intel</span>
+          <h1>Innovation Built for a Cleaner Future</h1>
+          <p>
+            Discover how intelligent design, efficient technology, and thoughtful
+            planning are shaping a sustainable tomorrow. Our timeline shows the
+            milestones that move progress forward.
+          </p>
+        </div>
+        <div class="hero-image">
+          <div class="image-slot">
+            <span>Picture placeholder</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="timeline-section">
+          <div class="section-heading">
+            <h2>Timeline of Progress</h2>
+            <p>Scroll to explore major milestones and achievements in sustainability.</p>
+          </div>
+
+          <div class="timeline-container">
+            <button class="timeline-nav prev" aria-label="Scroll timeline left">&larr;</button>
+            <div class="timeline-scroll" id="timelineScroll">
+              <article class="timeline-card">
+                <span class="timeline-year">2010</span>
+                <h3>Energy-efficient chips</h3>
+                <p>Intel introduces processors designed to lower power consumption across devices.</p>
+              </article>
+              <article class="timeline-card">
+                <span class="timeline-year">2014</span>
+                <h3>Smart manufacturing</h3>
+                <p>Advanced production techniques reduce waste and conserve resources at scale.</p>
+              </article>
+              <article class="timeline-card">
+                <span class="timeline-year">2018</span>
+                <h3>Renewable energy goals</h3>
+                <p>Commitments to greener power sources accelerate the shift to cleaner operations.</p>
+              </article>
+              <article class="timeline-card">
+                <span class="timeline-year">2022</span>
+                <h3>Carbon reduction milestones</h3>
+                <p>Major emissions reductions are achieved through innovation and efficiency.</p>
+              </article>
+              <article class="timeline-card">
+                <span class="timeline-year">2025</span>
+                <h3>Future-ready sustainability</h3>
+                <p>Preparing next-generation technology with sustainability at its core.</p>
+              </article>
+            </div>
+            <button class="timeline-nav next" aria-label="Scroll timeline right">&rarr;</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const scrollContainer = document.getElementById('timelineScroll');
+      const scrollAmount = 320;
+
+      document.querySelector('.prev').addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      document.querySelector('.next').addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    </script>
+  </body>
+</html>
